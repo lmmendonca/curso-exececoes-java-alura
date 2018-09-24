@@ -1,5 +1,3 @@
-import java.util.Stack;
-
 public class Fluxo {
 
     public static void main(String[] args) {
@@ -12,7 +10,7 @@ public class Fluxo {
         System.out.println("Ini do metodo1");
         try {
             metodo2();
-        } catch (ArithmeticException | NullPointerException e){
+        } catch (Exception e){
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
@@ -24,10 +22,7 @@ public class Fluxo {
         for (int i = 1; i <= 5; i++) {
             System.out.println(i);
 
-            i = i /0;
-
-            Conta conta = null;
-            conta.deposita();
+            throw new MinhaException("deu pau");
         }
         System.out.println("Fim do metodo2");
     }
